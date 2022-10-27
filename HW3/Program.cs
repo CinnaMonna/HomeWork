@@ -1,4 +1,5 @@
-﻿// Задача 19
+﻿// HW3
+// Задача 19
 // Напишите программу, которая принимает на вход пятизначное число и проверяет, 
 // является ли оно палиндромом.
 // 
@@ -48,6 +49,40 @@ if (IsItPalindrome(num) == true)
 else 
     Console.WriteLine($"No, number {num} is not a palindrome");
 
+
+*/
+
+// Задача 21
+// Напишите программу, которая принимает на вход координаты двух точек 
+// и находит расстояние между ними в 3D пространстве.
+// A (3,6,8); B (2,1,-7), -> 15.84
+// A (7,-5, 0); B (1,-1,9) -> 11.53
+
+/*
+
+double Distance3D(double x1, double y1, double z1, double x2, double y2, double z2)
+{
+    double dx = x1 - x2;
+    double dy = y1 - y2;
+    double dz = z1 - z2;
+    double dxy = Math.Sqrt(dx * dx + dy * dy);
+    double res = Math.Sqrt(dxy * dxy + dz * dz);
+
+    return res; 
+}
+
+Console.WriteLine("input the x, y, z coordinates of the point A: ");
+double xA = Convert.ToDouble(Console.ReadLine());
+double yA = Convert.ToDouble(Console.ReadLine());
+double zA = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("input the x, y, z coordinates of the point B: ");
+double xB = Convert.ToDouble(Console.ReadLine());
+double yB = Convert.ToDouble(Console.ReadLine());
+double zB = Convert.ToDouble(Console.ReadLine());
+
+double distance = Math.Round(Distance3D(xA, yA, zA, xB, yB, zB), 2);
+
+Console.WriteLine($"distance between points A ({xA},{yA},{zA}) and B ({xB},{yB},{zB}) is {distance}");
 
 */
 
