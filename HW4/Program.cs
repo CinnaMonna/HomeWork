@@ -79,6 +79,8 @@ Console.WriteLine($"Sum of digits of the number {number} is {SumOfDigits(number)
 // 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
 // 6, 1, 33 -> [6, 1, 33]
 
+/*
+
 int[] CreateUsersArray (int size)
 {
     int[] array = new int[size];
@@ -102,3 +104,6 @@ Console.WriteLine("input elements of the array: ");
 int[] array = CreateUsersArray(size);
 Console.Write("created array: ");
 ShowArray(array);
+
+*/
+
