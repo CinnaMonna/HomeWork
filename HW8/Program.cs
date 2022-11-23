@@ -99,5 +99,68 @@ Console.WriteLine("(row numbering starting from 1)");
 Console.WriteLine();
 */
 
+// Задача 58: Задайте две матрицы. Напишите программу, 
+// которая будет находить произведение двух матриц.
+/*
+
+int[,] Multiply2Arrays(int[,] arrayA, int[,] arrayB)
+{
+    int rows = arrayA.GetLength(0);
+    int columns = arrayB.GetLength(1);
+    int finalValueForSum = arrayA.GetLength(1); // оно же arrayB.GetLength(0)
+
+    int[,] multArray = new int[rows, columns];
+
+    for(int i = 0; i < rows; i++)
+        for(int j = 0; j < columns; j++)
+            for(int k = 0; k < finalValueForSum; k++)
+                multArray[i,j] += arrayA[i,k] * arrayB[k,j];
+
+    return multArray;
+}
+
+Console.Write("Input a number of rows of array A: ");
+int m1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a number of columns of array A: ");
+int n1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine();
+
+Console.WriteLine("Attention! To multiply array A by array B, the number of rows B ");
+Console.WriteLine($"must be equal to the number of columns A (your value = {n1})");
+Console.WriteLine();
+
+Console.Write("Input a number of rows of array B: ");
+int m2 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a number of columns of array B: ");
+int n2 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine();
+
+Console.Write("Input a min possible value (for both arrays): ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a max possible value (for both arrays): ");
+int max = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine();
+
+int[,] arrayA = CreateRandom2dArray(m1, n1, min, max);
+int[,] arrayB = CreateRandom2dArray(m2, n2, min, max);
+Console.WriteLine("Array A:");
+Show2dArray(arrayA);
+Console.WriteLine("Array B:");
+Show2dArray(arrayB);
+
+
+Console.WriteLine("Array C = A * B:");
+if(m2 != n1)
+    Console.WriteLine("Arrays can't be multiplied. Check if numbers of rows and columns are correct");
+else
+{
+        int[,] multArray = Multiply2Arrays(arrayA, arrayB);
+    Show2dArray(multArray);
+}
+Console.WriteLine();
+*/
+
+
+
 
 
