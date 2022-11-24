@@ -187,7 +187,7 @@ int[] All2DigitsNumbers()
     int[] all2DigitsNums = new int[countAll2DigitsNums];
     all2DigitsNums[0] = min2DigitsNum;
     for(int i = 1; i < 90; i++)
-        all2DigitsNums[i] = all2DigitsNums[i -1] + 1;     
+        all2DigitsNums[i] = all2DigitsNums[i - 1] + 1;     
     return all2DigitsNums;     
 }
 
@@ -230,3 +230,70 @@ int[,,] myArray = CreateRandomUnique2DigitsNumbers3dArray(m, n, l);
 Show3dArray(myArray);
 }
 */
+
+// Задача 62. Напишите программу, которая заполнит спирально массив
+/*
+int[,] CreateSpiralSquare2dArray(int size)
+{
+    int[,] array = new int[size, size];
+    
+    int value = 1;
+    int boundary1 = 0;
+    int boundary2 = size - 1;
+    int i;
+    int j;
+
+    while(value < size * size)
+    {
+        i = boundary1;
+        for(j = boundary1; j < boundary2; j++)
+        {
+            array[i,j] = value;
+            value++;
+        }
+
+        j = boundary2;
+        for(i = boundary1; i < boundary2; i++)
+        {
+            array[i,j] = value;
+            value++;
+        }
+
+        i = boundary2;
+        for(j = boundary2; j > boundary1; j--)
+        {
+            array[i,j] = value;
+            value++;
+        }
+
+        j = boundary1;
+        for(i = boundary2; i > boundary1; i--)
+        {
+            array[i,j] = value;
+            value++;
+        }
+
+        boundary1++;
+        boundary2--;
+    }
+
+    if(size % 2 !=0)
+        array[size / 2, size / 2] = size * size;
+    
+    return array;
+}
+
+Console.Write("Input side size of a square array: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine();
+
+int[,] myArray = CreateSpiralSquare2dArray(n);
+Show2dArray(myArray);
+*/
+
+
+
+
+
+
+
