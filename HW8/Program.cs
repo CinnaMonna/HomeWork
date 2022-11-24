@@ -154,13 +154,79 @@ if(m2 != n1)
     Console.WriteLine("Arrays can't be multiplied. Check if numbers of rows and columns are correct");
 else
 {
-        int[,] multArray = Multiply2Arrays(arrayA, arrayB);
+    int[,] multArray = Multiply2Arrays(arrayA, arrayB);
     Show2dArray(multArray);
 }
 Console.WriteLine();
 */
 
+// Задача 60. Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. 
+// Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
+/*
+int[,,] CreateRandomUnique2DigitsNumbers3dArray(int rows, int columns, int layers)
+{
+    int[,,] array = new int[rows, columns, layers];
+    int[] vacantValues = All2DigitsNumbers();
+
+    for(int i = 0; i < rows; i++)
+        for(int j = 0; j < columns; j++)
+            for(int k = 0; k < layers; k++)
+            {
+                int randomUniqueValue = vacantValues[new Random().Next(0, vacantValues.Length)];
+                array[i,j,k] = randomUniqueValue;
+                vacantValues = vacantValues.Where(val => val != randomUniqueValue).ToArray();
+                
+            }
+    return array;
+}
+
+int[] All2DigitsNumbers()
+{
+    int countAll2DigitsNums = 90;
+    int min2DigitsNum = 10;
+    int[] all2DigitsNums = new int[countAll2DigitsNums];
+    all2DigitsNums[0] = min2DigitsNum;
+    for(int i = 1; i < 90; i++)
+        all2DigitsNums[i] = all2DigitsNums[i -1] + 1;     
+    return all2DigitsNums;     
+}
+
+void Show3dArray(int[,,] array)
+{
+    for(int k = 0; k < array.GetLength(2); k++)
+    {
+        Console.WriteLine($"layer[{k}] of 3d array:");
+        for(int i = 0; i < array.GetLength(0); i++)
+        {
+            for(int j = 0; j < array.GetLength(1); j++)
+                Console.Write($"{array[i,j,k]}({i},{j},{k})   ");
+                // Console.Write($"{array[i,j,k]}   ");   
+            Console.WriteLine();
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
 
 
+Console.Write("Input a number of rows: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a number of columns: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a number of layers: ");
+int l = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine();
 
-
+int maxCount = 90;
+if(m * n * l > maxCount)
+{
+    Console.WriteLine("it is impossible to fill an array with non-repeating two-digit numbers.");
+    Console.WriteLine($"the total number of array elements must not exceed {maxCount}.");
+    Console.WriteLine();
+}
+else
+{
+int[,,] myArray = CreateRandomUnique2DigitsNumbers3dArray(m, n, l);
+Show3dArray(myArray);
+}
+*/
